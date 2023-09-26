@@ -9,3 +9,5 @@ Unfortunately, it will crash. Step through the program in the GDB (references av
 For starters, you'll probably want to run
 
 `gdb list`
+
+Happy hacking!
