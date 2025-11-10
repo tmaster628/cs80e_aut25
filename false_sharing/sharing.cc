@@ -26,13 +26,20 @@ void fillStruct(struct Data &d, const int id)
     CPU_ZERO(&cpuset);
     CPU_SET(id, &cpuset);
     pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpuset);
-    if (d.num1 < K_NUM_FULL)
+    if (id == 0)
     {
-        d.num1++;
+        while (d.num1 < K_NUM_FULL)
+        {
+            d.num1++;
+        }
     }
-    else if (d.num2 < K_NUM_FULL)
+
+    else if (id == 1)
     {
-        d.num2++;
+        while (d.num2 < K_NUM_FULL)
+        {
+            d.num2++;
+        }
     }
 }
 
